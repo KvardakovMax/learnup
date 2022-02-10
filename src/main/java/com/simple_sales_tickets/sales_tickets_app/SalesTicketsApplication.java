@@ -14,12 +14,17 @@ public class SalesTicketsApplication {
         ConcertCollector collector = context.getBean(ConcertCollector.class);
         collector.addConcert(new Concert("Fun fen", "This is a really long-long description","16+", 100));
         collector.addConcert(new Concert("Sad sad things", "This is not so long-long description as you think","16+", 100));
+        //Sales ticket
         collector.buyTicket("Fun fen");
         collector.returnTicket("Fun fen");
-        collector.getSoloConcert("Fun fen");
-        collector.getAllConcerts();
+        //Printing
+        collector.printSoloConcert("Fun fen");
+        collector.changeInfo(collector.getConcert("Fun fen"),"name", "Funny girl");
+        collector.printAllConcerts();
+        //Removing
         collector.removeConcert("Sad sad things");
-        collector.getAllConcerts();
+        collector.printAllConcerts();
+
 
     }
 

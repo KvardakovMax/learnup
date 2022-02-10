@@ -19,26 +19,6 @@ public class Concert {
     public Concert() {
     }
 
-    public void changeInfo(String changeField, String newInfo) {
-        switch (changeField) {
-            case "name":
-                setName(newInfo);
-                break;
-            case "description":
-                setDescription(newInfo);
-                break;
-            case "ageCategory":
-                setAgeCategory(newInfo);
-                break;
-            case "freeSpaceCnt":
-                setFreeSpaceCnt(Integer.parseInt(newInfo));
-                break;
-            default:
-                System.out.println("Error");
-                break;
-        }
-    }
-
     public String getName() {
         return name;
     }
