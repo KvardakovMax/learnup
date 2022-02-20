@@ -1,11 +1,13 @@
 package com.simple_sales_tickets.sales_tickets_app.services;
 
+import com.simple_sales_tickets.sales_tickets_app.annotations.Notifiable;
 import com.simple_sales_tickets.sales_tickets_app.entity.Concert;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
-@Component
-public class ConcertCollector {
+
+@Service
+public class ConcertCollectorService {
     private Map<String, Concert> concertsList = new HashMap<>();
 
     public void addConcert(Concert concert) {
@@ -28,6 +30,7 @@ public class ConcertCollector {
         return concertsList.get(name);
     }
 
+    @Notifiable
     public void buyTicket(String name) {
        System.out.println("Билет на " + name + " успешно приобретен.");
     }
